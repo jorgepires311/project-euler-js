@@ -12,5 +12,5 @@ for(let i = 1; i <= max; i++){
         multiples5.push(i);
     }
 }
-document.getElementById('result').innerHTML +='Multiples of 3:'+ multiples3 +'</p>';
-document.getElementById('result').innerHTML +='<p>Multiples of 5:\n'+ multiples5 +'</p>';
+console.log('Multiples of 3:\n'+ multiples3);
+console.log('Multiples of 5:\n'+ multiples5);
