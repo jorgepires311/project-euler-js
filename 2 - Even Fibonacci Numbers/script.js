@@ -2,10 +2,10 @@ function fibEvenSum(n){
     let fib = [1,2];
     let fibEven=[];
     for(let i = 1; i <= n;i++){
-//console.log('F: '+fib + '\n');
-        if(!(fib[i]  % 2)){
+
+if(fib[i] % 2 === 0){
             fibEven.push(fib[i]);
-           // console.log('FE: '+fibEven + '\n');
+
         }
         fib.push(fib[i] + fib[i-1]);
     }
@@ -18,7 +18,7 @@ function fibEvenSumMaxTerms(n){
     let fib = [1,2];
     let fibEven=[];
     for(let i = 1; fib[i-1]  <= n;i++){
-        if(!(fib[i]  % 2)){
+        if(fib[i]  % 2 === 0){
             fibEven.push(fib[i]);
         }
         fib.push(fib[i] + fib[i-1]);
