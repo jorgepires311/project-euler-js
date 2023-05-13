@@ -1,16 +1,30 @@
-console.log('hi');
-
-const max = 1000;
-let multiples3 = [];
-let multiples5 = [];
-
-for(let i = 1; i <= max; i++){
-    if(i % 3 == 0){
-        multiples3.push(i);
+function fibEvenSum(n){
+    let fib = [1,2];
+    let fibEven=[];
+    for(let i = 1; i <= n;i++){
+//console.log('F: '+fib + '\n');
+        if(!(fib[i]  % 2)){
+            fibEven.push(fib[i]);
+           // console.log('FE: '+fibEven + '\n');
+        }
+        fib.push(fib[i] + fib[i-1]);
     }
-    if(i % 5 == 0 ){
-        multiples5.push(i);
-    }
+    return fibEven.reduce((a,b)=> a+b,0);
 }
-console.log('Multiples of 3:\n'+ multiples3);
-console.log('Multiples of 5:\n'+ multiples5);
+document.getElementById('result').innerHTML +='<p>Total sum of terms(1000):'+ fibEvenSum(1000) +'</p>';
+
+
+function fibEvenSumMaxTerms(n){
+    let fib = [1,2];
+    let fibEven=[];
+    for(let i = 1; fib[i-1]  <= n;i++){
+        if(!(fib[i]  % 2)){
+            fibEven.push(fib[i]);
+        }
+        fib.push(fib[i] + fib[i-1]);
+    }
+    return fibEven.reduce((a,b)=> a+b,0);
+}
+document.getElementById('result').innerHTML +='<p>Total sum of terms less than 1000):'+fibEvenSumMaxTerms(1000) +'</p>';
+
+
